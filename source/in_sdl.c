@@ -589,13 +589,13 @@ static void IN_JoyMove(usercmd_t *cmd) {
 
     // stolen from Rinnegatamante's vitaQuake
 
-    int x_mov = abs(lx) < 30 ? 0 : (lx * cl_sidespeed.value) * 0.01;
-    int y_mov = abs(ly) < 30 ? 0 : (ly * (ly > 0 ? cl_backspeed.value : cl_forwardspeed.value)) * 0.01;
+    int x_mov = abs(lx) < 10 ? 0 : (lx * cl_sidespeed.value) * 0.01;
+    int y_mov = abs(ly) < 10 ? 0 : (ly * (ly > 0 ? cl_backspeed.value : cl_forwardspeed.value)) * 0.01;
     cmd->forwardmove -= y_mov;
     cmd->sidemove += x_mov;
 
-    int x_cam = abs(rx) < 50 ? 0 : rx * sensitivity.value * 0.008;
-    int y_cam = abs(ry) < 50 ? 0 : ry * sensitivity.value * 0.008;
+    int x_cam = abs(rx) < 10 ? 0 : rx * sensitivity.value * 0.008;
+    int y_cam = abs(ry) < 10 ? 0 : ry * sensitivity.value * 0.008;
     cl.viewangles[YAW] -= x_cam;
 
     V_StopPitchDrift();
