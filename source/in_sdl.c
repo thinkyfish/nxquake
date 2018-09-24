@@ -594,8 +594,8 @@ static void IN_JoyMove(usercmd_t *cmd) {
     cmd->forwardmove -= y_mov;
     cmd->sidemove += x_mov;
 
-    int x_cam = abs(rx) < 10 ? 0 : rx * sensitivity.value * 0.008;
-    int y_cam = abs(ry) < 10 ? 0 : ry * sensitivity.value * 0.008;
+    int x_cam = abs(rx) < 1 ? 0 : rx * sensitivity.value * 0.008;
+    int y_cam = abs(ry) < 1 ? 0 : ry * sensitivity.value * 0.008;
     cl.viewangles[YAW] -= x_cam;
 
     V_StopPitchDrift();
