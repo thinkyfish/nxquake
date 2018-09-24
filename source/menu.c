@@ -414,8 +414,8 @@ static void M_AdjustSliders(int dir) {
             Cvar_SetValue("gamma", v_gamma.value);
             break;
         case M_OPTIONS_CURSOR_MOUSESPEED:
-            sensitivity.value += dir * 0.3;
-            sensitivity.value = qclamp(sensitivity.value, 0.01f, 11.0f);
+            sensitivity.value += dir * 0.2;
+            sensitivity.value = qclamp(sensitivity.value, 0.01f, 17.0f);
             Cvar_SetValue("sensitivity", sensitivity.value);
             break;
         case M_OPTIONS_CURSOR_MUSICVOLUME:
